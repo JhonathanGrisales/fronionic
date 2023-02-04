@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SemilleroService } from '../services/semillero.service';
 
 @Component({
   selector: 'app-home',
@@ -6,7 +7,15 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  images = undefined;
 
-  constructor() {}
+  constructor(private semilleroService: SemilleroService) {}
 
+  ionViewDidEnter() {
+    this.semilleroService.getImages().then((newImages) => {
+
+      this.images = newImages.images
+    });
+
+  }
 }

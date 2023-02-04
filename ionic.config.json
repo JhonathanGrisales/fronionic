@@ -1,5 +1,7 @@
 {
   "name": "semillero",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
